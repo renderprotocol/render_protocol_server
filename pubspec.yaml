@@ -1,7 +1,7 @@
 name: render_protocol_server
 description: A server app using the shelf package and Docker.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+version: 0.0.1
+repository: https://github.com/renderprotocol/render_protocol_server
 
 environment:
   sdk: ^3.10.1
