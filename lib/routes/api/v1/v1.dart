@@ -7,9 +7,8 @@ class RPAPIV1Routes extends RouterModifier {
 
   @override
   Router modify(Router incoming) {
-    final basePath = "$prefix/v1";
-    final indexPath = "$basePath/";
-    final echoPath = "$basePath/echo/<message>";
+    final indexPath = "$prefix/v1";
+    final echoPath = "$indexPath/echo/<message>";
 
     return incoming
       ..get(indexPath, _rootHandler)
