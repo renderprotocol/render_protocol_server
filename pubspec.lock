@@ -233,6 +233,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.2"
+  shelf_essentials:
+    dependency: "direct main"
+    description:
+      name: shelf_essentials
+      sha256: ebc662ba8e3c801d04fe86ae0b27f3fe9194091323b8e7078f8aac72c88751f3
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   shelf_packages_handler:
     dependency: transitive
     description:
