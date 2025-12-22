@@ -1,20 +1,21 @@
 import 'dart:io';
 
-import 'package:render_protocol_server/middlewares/rp_cors_headers.dart';
 import 'package:render_protocol_server/routes/rp_routes.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
+import 'package:shelf_essentials/shelf_essentials.dart';
 
 class RenderProtocol {
   HttpServer? _httpServer;
 
   Future<HttpServer> makeServer() async {
     final ip = InternetAddress.anyIPv4;
-    final router = RPRoutes().buildRouter();
     final port = int.parse(Platform.environment['PORT'] ?? '8080');
 
+    final router = RPRoutes().buildRouter();
+
     final handler = Pipeline()
-        .addMiddleware(RPCorsHeaders.makeMiddleware())
+        .addMiddleware(corsHeaders())
         .addMiddleware(logRequests())
         .addHandler(router.call);
 
