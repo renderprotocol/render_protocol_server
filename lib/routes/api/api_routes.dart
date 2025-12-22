@@ -1,5 +1,5 @@
 import 'package:render_protocol_server/extensions/router_extension.dart';
-import 'package:render_protocol_server/routes/api/v1/v1.dart';
+import 'package:render_protocol_server/routes/api/v1/v1_routes.dart';
 import 'package:shelf_router/shelf_router.dart';
 
 class RPAPIRoutes extends RouterModifier {
