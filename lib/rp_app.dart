@@ -11,12 +11,12 @@ class RenderProtocol {
   ShelfServer? _shelfServer;
   GrpcServer? _grpcServer;
 
-  Future<void> makeServers() async {
-    _shelfServer = await _makeShelfServer();
-    _grpcServer = await _makeGRPCServer();
+  Future<void> start() async {
+    _shelfServer ??= await _makeShelfServer();
+    _grpcServer ??= await _makeGrpcServer();
   }
 
-  Future<void> stopServers() async {
+  Future<void> stop() async {
     await _shelfServer?.close();
     _shelfServer = null;
 
@@ -40,7 +40,7 @@ class RenderProtocol {
     return server;
   }
 
-  Future<GrpcServer> _makeGRPCServer() async {
+  Future<GrpcServer> _makeGrpcServer() async {
     final codecRegistry = grpc.CodecRegistry(
       codecs: [
         grpc.GzipCodec(),
