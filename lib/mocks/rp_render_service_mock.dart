@@ -7,9 +7,9 @@ class RPRenderServiceMock extends RPRenderServiceBase {
   final _uuid = Uuid();
 
   @override
-  Future<RPFetchViewResponse> rPFetchView(
+  Future<RPFetchRenderTreeResponse> rPFetchRenderTree(
     grpc.ServiceCall call,
-    RPFetchViewRequest request,
+    RPFetchRenderTreeRequest request,
   ) async {
     final text = RPText();
     text.value = "Hello world from RP!";
@@ -21,7 +21,7 @@ class RPRenderServiceMock extends RPRenderServiceBase {
     column.children.add(text.makeWidget());
     column.children.add(image.makeWidget());
 
-    final response = RPFetchViewResponse();
+    final response = RPFetchRenderTreeResponse();
     response.id = _uuid.v1();
     response.view = column.makeWidget();
     return response;
