@@ -1,5 +1,5 @@
-import 'package:render_protocol_server/core/rp_utils.dart';
 import 'package:rp_generated_dart/rp_generated_dart.dart';
+import 'package:rp_utils_dart/rp_utils_dart.dart';
 
 extension RPRowExtension on RPRow {
   RPWidget makeWidget() {

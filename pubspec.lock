@@ -290,6 +290,15 @@ packages:
       url: "https://github.com/renderprotocol/rp_generated_dart.git"
     source: git
     version: "0.0.1"
+  rp_utils_dart:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: e24558387ed709d27c5569547198cc4b05e2b62c
+      url: "https://github.com/renderprotocol/rp_utils_dart.git"
+    source: git
+    version: "0.0.1"
   shelf:
     dependency: "direct main"
     description:

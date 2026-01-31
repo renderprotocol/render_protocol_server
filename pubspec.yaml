@@ -22,6 +22,10 @@ dependencies:
     git:
       url: https://github.com/renderprotocol/rp_generated_dart.git
       ref: main
+  rp_utils_dart:
+    git:
+      url: https://github.com/renderprotocol/rp_utils_dart.git
+      ref: main
 
 dev_dependencies:
   http: ^1.2.2
