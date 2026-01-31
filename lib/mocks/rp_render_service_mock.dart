@@ -1,5 +1,5 @@
-import 'package:render_protocol_server/extensions/ui_component_extension.dart';
 import 'package:rp_generated_dart/rp_generated_dart.dart';
+import 'package:rp_utils_dart/rp_utils_dart.dart';
 import 'package:uuid/uuid.dart';
 import 'package:grpc/grpc.dart' as grpc;
 
