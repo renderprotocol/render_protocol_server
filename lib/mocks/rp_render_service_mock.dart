@@ -38,17 +38,27 @@ class RPRenderServiceMock extends RPRenderServiceBase {
     clip.type = .RP_CLIP_TYPE_ANTI_ALIAS;
     clip.child = image.makeWidget();
 
-    final row = rpRow(
+    final expanded = RPExpanded();
+    expanded.child = clip.makeWidget();
+
+    final toggle = RPToggle()..enabled = true;
+
+    final row1 = RPRow();
+    row1.children.add(opacity.makeWidget());
+    row1.children.add(RPSpacer().makeWidget());
+    row1.children.add(toggle.makeWidget());
+
+    final row2 = rpRow(
       children: [
-        clip.makeWidget(),
-        clip.makeWidget(),
+        expanded.makeWidget(),
+        expanded.makeWidget(),
       ],
     );
 
     final column = rpColumn(
       children: [
-        opacity.makeWidget(),
-        row.makeWidget(),
+        row1.makeWidget(),
+        row2.makeWidget(),
       ],
       alignment: .RP_AXIS_ALIGNMENT_LEADING,
     );
@@ -58,7 +68,7 @@ class RPRenderServiceMock extends RPRenderServiceBase {
     card.backgroundColor = rpColorTeal;
 
     final box = RPSizeBox();
-    box.height = 200.0;
+    box.height = 212.0;
     box.child = card.makeWidget();
 
     final lazyList = RPLazyList();
