@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'package:grpc/grpc.dart' as grpc;
+typedef VoidCallback = void Function();
 
-typedef ShelfServer = HttpServer;
-
-typedef GrpcServer = grpc.Server;
+typedef JSON = Map<String, dynamic>;

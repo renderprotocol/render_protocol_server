@@ -1,6 +1,6 @@
-import 'package:render_protocol_server/extensions/router_extension.dart';
-import 'package:render_protocol_server/routes/admin/admin_routes.dart';
-import 'package:render_protocol_server/routes/api/api_routes.dart';
+import 'package:render_protocol_server/transport/shelf/extensions/router_extension.dart';
+import 'package:render_protocol_server/transport/shelf/routes/admin/admin_routes.dart';
+import 'package:render_protocol_server/transport/shelf/routes/api/api_routes.dart';
 import 'package:shelf_router/shelf_router.dart';
 import 'package:shelf_static/shelf_static.dart';
 

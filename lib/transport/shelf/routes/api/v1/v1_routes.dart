@@ -1,4 +1,4 @@
-import 'package:render_protocol_server/extensions/router_extension.dart';
+import 'package:render_protocol_server/transport/shelf/extensions/router_extension.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
