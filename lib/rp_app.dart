@@ -15,9 +15,9 @@ class RenderProtocol {
   ShelfServer? _shelfServer;
 
   Future<void> start() async {
-    final config = RPConfig.fromEnvironment();
+    final config = RPConfig.rpDefault;
 
-    final RPDatabase db = RPMongoDatabase();
+    final RPDatabase db = RPMongoDatabase(url: config.dbURL);
     await db.connect();
     _database = db;
 
@@ -29,8 +29,11 @@ class RenderProtocol {
       RPRenderService(renderTreeRepo: renderTreeRepo),
     ];
 
-    final grpcTransport = GrpcTransport(services: services);
-    final shelfTransport = ShelfTransport();
+    final grpcTransport = GrpcTransport(
+      endpoint: config.grpcEndpoint,
+      services: services,
+    );
+    final shelfTransport = ShelfTransport(endpoint: config.shelfEndpoint);
 
     _grpcServer ??= await grpcTransport.makeServer();
     _shelfServer ??= await shelfTransport.makeServer();
