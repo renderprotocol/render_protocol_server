@@ -79,11 +79,28 @@ class RPRenderServiceMock extends RPRenderServiceBase {
       lazyList.children.add(box.makeWidget());
     }
 
-    final component = lazyList.makeWidget().withPadding(8.0);
-
     final response = RPFetchRenderTreeResponse();
     response.id = _uuid.v1();
-    response.view = component;
+    response.tree = lazyList.makeWidget().withPadding(8.0);
+
     return response;
+  }
+
+  @override
+  Future<RPFetchComponentResponse> rPFetchComponent(
+    grpc.ServiceCall call,
+    RPFetchComponentRequest request,
+  ) {
+    // TODO: implement rPFetchComponent
+    throw UnimplementedError();
+  }
+
+  @override
+  Stream<RPSubscribeRenderTreeResponse> rPSubscribeRenderTree(
+    grpc.ServiceCall call,
+    RPSubscribeRenderTreeRequest request,
+  ) {
+    // TODO: implement rPSubscribeRenderTree
+    throw UnimplementedError();
   }
 }

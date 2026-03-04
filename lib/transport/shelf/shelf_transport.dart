@@ -7,7 +7,7 @@ import 'package:shelf_essentials/shelf_essentials.dart';
 
 typedef ShelfServer = HttpServer;
 
-class ShelfTransport implements RPServerTransport {
+class ShelfTransport implements RPServerTransport<ShelfServer> {
   @override
   Future<ShelfServer> makeServer() async {
     final ip = InternetAddress.anyIPv4;
