@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:fixnum/fixnum.dart' show Int64;
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:rp_generated_dart/rp_generated_dart.dart';
 
@@ -48,8 +49,8 @@ class RenderTreeDocument {
     final bsonBinary = json['tree_data'] as BsonBinary;
     final bytes = Uint8List.fromList(bsonBinary.byteList);
     final tree = RPWidget.fromBuffer(bytes);
-    final createdAt = json['created_at'] as int;
-    final updatedAt = json['updated_at'] as int;
+    final createdAt = (json['created_at'] as Int64).toInt();
+    final updatedAt = (json['updated_at'] as Int64).toInt();
 
     return .new(
       id: json['_id'] as String,
@@ -68,8 +69,8 @@ class RenderTreeDocument {
       '_id': id,
       'tree_data': bsonBinary,
       'version': version,
-      'created_at': createdAt.millisecondsSinceEpoch,
-      'updated_at': updatedAt.millisecondsSinceEpoch,
+      'created_at': Int64(createdAt.millisecondsSinceEpoch),
+      'updated_at': Int64(updatedAt.millisecondsSinceEpoch),
     };
   }
 }

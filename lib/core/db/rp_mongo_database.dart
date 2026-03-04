@@ -15,9 +15,7 @@ class RPMongoDatabase implements RPDatabase {
   }
 
   @override
-  Future<void> disconnect() async {
-    await _db.close();
-  }
+  Future<void> disconnect() async => await _db.close();
 
   @override
   DbCollection collection(String name) => _db.collection(name);

@@ -1,12 +1,9 @@
+import 'package:get_it/get_it.dart';
 import 'package:grpc/grpc.dart';
 import 'package:render_protocol_server/repositories/session_repository.dart';
 import 'package:rp_generated_dart/rp_generated_dart.dart';
 
 class RPHandshakeService extends RPHandshakeServiceBase {
-  RPHandshakeService({required this.sessionRepo});
-
-  final SessionRepository sessionRepo;
-
   @override
   Future<RPInitiateResponse> rPInitiate(
     ServiceCall call,
@@ -33,4 +30,6 @@ class RPHandshakeService extends RPHandshakeServiceBase {
     // TODO: implement rPRefreshSession
     throw UnimplementedError();
   }
+
+  SessionRepository get sessionRepo => GetIt.instance<SessionRepository>();
 }

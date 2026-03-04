@@ -17,7 +17,9 @@ dependencies:
   uuid: ^4.5.2
   meta: ^1.17.0
   grpc: ^5.1.0
+  get_it: ^9.2.1
   logger: ^2.6.2
+  fixnum: ^1.1.1
   mongo_dart: ^0.10.8
   
   rp_generated_dart:

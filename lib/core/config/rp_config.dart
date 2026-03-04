@@ -42,8 +42,7 @@ class RPConfig {
     );
   }
 
-  String get dbURL =>
-      "mongodb://${dbEndpoint.ip.address}:${dbEndpoint.port}/renderprotocol";
+  String get dbURL => "mongodb://${dbEndpoint.ip.address}:${dbEndpoint.port}/renderprotocol";
 }
 
 class RPEndpoint {
