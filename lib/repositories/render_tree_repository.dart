@@ -34,6 +34,30 @@ class RenderTreeRepository {
   }
 
   // ───────────────────────────────────────────────
+  // Write
+  // ───────────────────────────────────────────────
+
+  /// Writes a [renderTree] to the database.
+  ///
+  /// If a document with the same [id] already exists, it will be overwritten.
+  Future<void> write(RenderTreeDocument renderTree) async {
+    await _collection.replaceOne(
+      where.eq('_id', renderTree.id),
+      renderTree.toJSON(),
+      upsert: true,
+    );
+  }
+
+  // ───────────────────────────────────────────────
+  // Delete
+  // ───────────────────────────────────────────────
+
+  /// Deletes the render tree with the given [id].
+  Future<void> delete(String id) async {
+    await _collection.deleteOne(where.eq('_id', id));
+  }
+
+  // ───────────────────────────────────────────────
   // Helpers
   // ───────────────────────────────────────────────
 
