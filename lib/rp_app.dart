@@ -25,7 +25,7 @@ class RenderProtocol {
     final renderTreeRepo = RenderTreeRepository(db: db);
 
     final services = [
-      RPHandshakeService(config: config, sessionRepo: sessionRepo),
+      RPHandshakeService(sessionRepo: sessionRepo),
       RPRenderService(renderTreeRepo: renderTreeRepo),
     ];
 

@@ -1,15 +1,10 @@
 import 'package:grpc/grpc.dart';
-import 'package:render_protocol_server/core/config/rp_config.dart';
 import 'package:render_protocol_server/repositories/session_repository.dart';
 import 'package:rp_generated_dart/rp_generated_dart.dart';
 
 class RPHandshakeService extends RPHandshakeServiceBase {
-  RPHandshakeService({
-    required this.config,
-    required this.sessionRepo,
-  });
+  RPHandshakeService({required this.sessionRepo});
 
-  final RPConfig config;
   final SessionRepository sessionRepo;
 
   @override
